@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import $ from 'jquery';
 import {MdCarRental, MdLogin} from "react-icons/md";
 import {Button} from "@mui/material";
+import MyButton from "../Button/MyButton";
 
 const Navbar = () => {
 
@@ -110,8 +111,17 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/" exact>
-                            <Button variant="contained" endIcon={<MdLogin/>}>Login/Register</Button>
+                        <NavLink className="nav-link" to="/LoginRegister" exact>
+                            <span>
+                                <MyButton
+                                    rounded = {true}
+                                    idleText={
+                                    <span>
+                                        Login/Register    <MdLogin/>
+                                    </span>
+                                    }
+                                />
+                            </span>
                         </NavLink>
                     </li>
                 </ul>

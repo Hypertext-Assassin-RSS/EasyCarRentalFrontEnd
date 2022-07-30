@@ -12,6 +12,7 @@ import Home from './pages/Home/Home';
 import Services from './pages/Service/Services';
 import Testimonial from './pages/Testimonial/Testimonial';
 import Navbar from './Components/Navbar/Navbar';
+import LoginRegister from "./pages/LoginRegister/LoginRegister";
 
 const App = () => {
     return (
@@ -33,6 +34,9 @@ const App = () => {
                     </Route>
                     <Route path="/contact" exact>
                         <Contact/>
+                    </Route>
+                    <Route path="/LoginRegister" exact>
+                        <LoginRegister/>
                     </Route>
                     <Redirect to="/"/>
                 </Switch>
