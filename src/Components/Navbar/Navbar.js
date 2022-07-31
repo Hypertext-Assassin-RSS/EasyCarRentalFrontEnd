@@ -111,7 +111,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/LoginRegister" exact>
+                        <NavLink className="nav-link" to="/Login" exact>
                             <span>
                                 <MyButton
                                     rounded = {true}

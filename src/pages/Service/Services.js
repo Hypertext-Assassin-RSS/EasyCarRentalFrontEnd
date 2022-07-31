@@ -1,13 +1,19 @@
-import React from 'react'
-const Services = () => {
-  return (
-    <div className="container">
-    
-        <h1 className="text-center" style={{paddingTop: "30%"}}>
-          Services
-        </h1>
-        
-    </div>
-  )
+import React, {Component} from 'react'
+import Register from "../LoginRegister/Register";
+
+
+class Services extends Component{
+  constructor(props, context, register) {
+    super(props, context);
+    }
+  render() {
+    return (
+        <div className="container">
+          <Register/>
+        </div>
+    )
+  }
+
+
 }
 export default Services;

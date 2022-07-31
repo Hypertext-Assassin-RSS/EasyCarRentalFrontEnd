@@ -1,50 +1,113 @@
-import React from "react";
-import registerImg from "../../img/Register.jpg";
-import "../../pages/LoginRegister/style.css"
-import AnimationButton from "../../Components/Button/AnimationButton";
-import {Typography} from "@mui/material";
+import React from 'react'
+import {Checkbox, Divider, Grid, Select, Typography} from "@mui/material";
+import Button from "../../Components/controls/Button";
+import {FormControlLabel} from "@material-ui/core";
 import '@fontsource/roboto/700.css';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
+import "./Register.css"
+import "../../img/Register.jpg"
 
-export class Register extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function Register(props) {
+    const {fullName, email, mobile, address, nic, lic, gender, date, subscribe, handleSubmit} = props;
 
-    render() {
-        return (
-            <div className="base-container" ref={this.props.containerRef}>
-                <div className="header">
+    const genders = [
+        {label: 'Male'},
+        {label: 'Female'}
+    ]
+
+    return (
+        <div className="container">
+            <div style={{marginBottom: "1rem"}}>
+                <div>
                     <Typography variant="h5" gutterBottom component="div">
-                        Register
+                        Customer Register
                     </Typography>
-                    </div>
-                <div className="content">
-                    <div className="image">
-                        <img src={registerImg} style={{paddingTop:"1rem"}} alt={"Register.jpg"}/>
-                    </div>
-                    <div className="form">
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className={"input"} name="username" placeholder="username" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="text" className={"input"} name="email" placeholder="email" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="text" className={"input"} name="password" placeholder="password" />
-                        </div>
-                    </div>
                 </div>
-                <div className="footer">
-                    <AnimationButton
-                        idleText={"Register"}
-                    />
-                </div>
+                <Divider light/>
             </div>
-        );
-    }
+            <form  onSubmit={handleSubmit}>
+                <div className={'background'}></div>
+                <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 8, md: 12}}>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <TextField type="text" id="outlined-basic" name="fullName" variant="outlined" label="Full Name"
+                                   fullWidth={true}/>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <TextField type="text" id="outlined-basic" variant="outlined" fullWidth={true} label="Email"
+                                   name="email"/>
+
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <TextField type="text" id="outlined-basic" variant="outlined" fullWidth={true} label="Mobile"
+                                   name="mobile"/>
+
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <TextField type="text" id="outlined-basic" variant="outlined" fullWidth={true} label="Address"
+                                   name="Address"/>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <Autocomplete
+                            disablePortal
+                            id="combo-box-demo"
+                            options={genders}
+                            renderInput={(params) => <TextField {...params} label="Gender"/>}
+                        />
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4} style={{zIndex:"1"}}>
+                        <FormControlLabel control={<Checkbox defaultChecked/>} label="Subscribe for Special Deals" defaultChecked={true}/>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <div className={'buttons-container'}>
+                            <Button
+                                type="submit"
+                                text="Submit"/>
+                            <Button
+                                text="Reset"
+                                color="default"
+                                /*onClick={resetForm}*/ />
+                        </div>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 1, sm: 1, md: 1}}>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <div style={{display: "flex", flexDirection: "row"}}>
+                            <div className={'file'}>
+                                <TextField type="text" id="outlined-basic" variant="outlined" label="Nic No"/>
+                            </div>
+                            <div className={'file'}>
+                                <TextField type="file" id="outlined-basic" variant="outlined"/>
+                            </div>
+
+                        </div>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <div style={{display: "flex", flexDirection: "row"}}>
+                            <div className={'file'}>
+                                <TextField type="text" id="outlined-basic" variant="outlined"
+                                           label="Driving License number"/>
+                            </div>
+                            <div className={'file'}>
+                                <TextField type="file" id="outlined-basic" variant="outlined"/>
+                            </div>
+
+                        </div>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <div>
+                            <Button
+                                type="submit"
+                                text="Submit"/>
+                            <Button
+                                text="Reset"
+                                color="default"/>
+                        </div>
+                    </Grid>
+                </Grid>
+            </form>
+        </div>
+    )
 }
 
-export default Register
+export default Register;

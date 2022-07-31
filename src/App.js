@@ -12,7 +12,8 @@ import Home from './pages/Home/Home';
 import Services from './pages/Service/Services';
 import Testimonial from './pages/Testimonial/Testimonial';
 import Navbar from './Components/Navbar/Navbar';
-import LoginRegister from "./pages/LoginRegister/LoginRegister";
+import Login from "./pages/LoginRegister/Login";
+import Register from "./pages/LoginRegister/Register";
 
 const App = () => {
     return (
@@ -35,8 +36,11 @@ const App = () => {
                     <Route path="/contact" exact>
                         <Contact/>
                     </Route>
-                    <Route path="/LoginRegister" exact>
-                        <LoginRegister/>
+                    <Route path="/Login" exact>
+                        <Login/>
+                    </Route>
+                    <Route path="/Register" exact>
+                        <Register/>
                     </Route>
                     <Redirect to="/"/>
                 </Switch>

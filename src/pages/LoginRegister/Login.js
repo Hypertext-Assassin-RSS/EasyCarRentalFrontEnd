@@ -1,9 +1,12 @@
 import React from "react";
 import loginImg from "../../img/Login.jpg";
-import "../../pages/LoginRegister/style.css"
+import "./Login.css"
 import AnimationButton from "../../Components/Button/AnimationButton";
-import {Typography} from "@mui/material";
+import {Link, Typography} from "@mui/material";
 import '@fontsource/roboto/700.css';
+import MyButton from "../../Components/Button/MyButton";
+import {MdLogin} from "react-icons/md";
+import {NavLink} from "react-router-dom";
 
 export class Login extends React.Component {
     constructor(props) {
@@ -34,9 +37,25 @@ export class Login extends React.Component {
                     </div>
                 </div>
                 <div className="footer">
-                    <AnimationButton
-                        idleText={"Login"}
-                    />
+                    <div className={'buttons'}>
+                        <AnimationButton
+                            idleText={"Login"}
+                        />
+                    </div>
+                    <div className={'buttons'}>
+                        <NavLink  to="/Register" exact>
+                            <span>
+                                <MyButton
+                                    idleText={
+                                        "Register"
+                                    }
+                                />
+                            </span>
+                        </NavLink>
+                    </div>
+
+
+
                 </div>
             </div>
         );
