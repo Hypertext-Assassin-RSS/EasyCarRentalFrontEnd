@@ -7,6 +7,8 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import "./Register.css"
 import "../../img/Register.jpg"
+import MyButton from "../../Components/Button/MyButton";
+import {NavLink} from "react-router-dom";
 
 function Register(props) {
     const {fullName, email, mobile, address, nic, lic, gender, date, subscribe, handleSubmit} = props;
@@ -102,6 +104,25 @@ function Register(props) {
                             <Button
                                 text="Reset"
                                 color="default"/>
+                        </div>
+                    </Grid>
+                    <Grid item xs={2} sm={4} md={4}>
+                        <div className={'loginModel'}>
+                            <div className={'loginItem'}>
+                                <Typography variant="h7"  gutterBottom component="div">
+                                    Already have account</Typography>
+                            </div>
+                            <div>
+                                <NavLink  to="/Login" exact>
+                            <span>
+                                <MyButton
+                                    idleText={
+                                        "Login"
+                                    }
+                                />
+                            </span>
+                                </NavLink>
+                            </div>
                         </div>
                     </Grid>
                 </Grid>

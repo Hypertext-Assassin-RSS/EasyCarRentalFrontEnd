@@ -17,7 +17,7 @@ export class Login extends React.Component {
         return (
             <div className="base-container" ref={this.props.containerRef}>
                 <div className="header">
-                    <Typography variant="h5" style={{top:'7rem'}} gutterBottom component="div">
+                    <Typography variant="h4" style={{top:'7rem'}} gutterBottom component="div">
                         Login
                     </Typography>
                 </div>
@@ -53,9 +53,6 @@ export class Login extends React.Component {
                             </span>
                         </NavLink>
                     </div>
-
-
-
                 </div>
             </div>
         );
