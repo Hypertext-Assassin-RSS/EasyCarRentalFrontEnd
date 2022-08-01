@@ -16,7 +16,7 @@ function MyButton(props) {
             outline={props.outline}
             shadow={props.shadow}
             rounded={props.rounded}
-            size={props.state}
+            size={props.size}
             block={props.black}
             messageDuration={props.messageDuration}
             disabled={props.disabled}
