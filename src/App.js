@@ -14,6 +14,7 @@ import Testimonial from './pages/Testimonial/Testimonial';
 import Navbar from './Components/Navbar/Navbar';
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
+import DenseTable from "./pages/Managment/Rent/RentRequests";
 
 const App = () => {
     return (
@@ -42,6 +43,11 @@ const App = () => {
                     <Route path="/Register" exact>
                         <Register/>
                     </Route>
+                    <Route path="/RentRequests" exact>
+                        <DenseTable/>
+                    </Route>
+
+
                     <Redirect to="/"/>
                 </Switch>
             </main>

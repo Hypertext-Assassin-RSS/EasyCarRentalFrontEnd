@@ -38,9 +38,12 @@ export class Login extends React.Component {
                 </div>
                 <div className="footer">
                     <div className={'buttons'}>
-                        <AnimationButton
-                            idleText={"Login"}
-                        />
+                        <NavLink  to="/RentRequests" exact>
+                            <AnimationButton
+                                idleText={"Login"}
+                            />
+                        </NavLink>
+
                     </div>
                     <div className={'buttons'}>
                         <NavLink  to="/Register" exact>
