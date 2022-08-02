@@ -15,10 +15,13 @@ import Navbar from './Components/Navbar/Navbar';
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
 import DenseTable from "./pages/Managment/Rent/RentRequests";
+import Dash from "./pages/Managment/Dash";
+
 
 const App = () => {
     return (
         <Router>
+
             <Navbar/>
             <main>
                 <Switch>
@@ -46,8 +49,9 @@ const App = () => {
                     <Route path="/RentRequests" exact>
                         <DenseTable/>
                     </Route>
-
-
+                    <Route path="/Dash" exact>
+                        <Dash/>
+                    </Route>
                     <Redirect to="/"/>
                 </Switch>
             </main>
